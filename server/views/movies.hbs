@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        {{> header}}
+        <title>Movies</title>
+    </head>
+    <body>
+        {{> menu}}
+        <h1 class="titulopag">Películas</h1>
+        <div class="nuevapeli">
+            <a href="/movieAdd"><button>Añadir Nueva Película</button></a>
+        </div>
+        <section class="contenido pelis">
+            {{#each film}}
+                <div>
+                    <h2>{{title}}</h2>
+                    <img class="caratula" src="/imatges/caratula.png" alt="caratula">
+                    <p>{{description}}</p>
+                    <p><strong>Año:</strong> {{release_year}}</p>
+                    <p><strong>Idioma:</strong> {{name}}</p>
+                    <p><strong>Duración:</strong> {{length}} min</p>
+                    <p><strong>Rating:</strong> {{rating}}</p>
+                    <p><strong>Actores:</strong></p>
+                    <ul>
+                        {{#each actors}}
+                            <li>{{first_name}} {{last_name}}</li>
+                        {{/each}}
+                    </ul>
+                    <a href="/movie?id={{film_id}}" class="verdetalles">Ver detalles...</a>
+                </div>
+            {{/each}}
+        </section>
+        {{> footer}}
+    </body>
+</html>

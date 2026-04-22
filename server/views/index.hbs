@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        {{> header}}
+        <title>Home</title>
+    </head>
+    <body>
+        {{> menu}}
+        <div class="contenido">
+            <h1 class="titulopag">Películas y Categorías destacadas</h1>
+            <!-- Parte películas -->
+            <section>
+                <h2>Películas:</h2>
+                <div class="pelis">
+                    {{#each film}}
+                        <div>
+                            <h3>{{title}}</h3>
+                            <img class="caratula" src="/imatges/caratula.png" alt="caratula">
+                            <p><strong>Año:</strong> {{release_year}}</p>
+                            <p><strong>Actores:</strong></p>
+                            <ul>
+                                {{#each actors}}
+                                    <li>{{first_name}} {{last_name}}</li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    {{/each}}
+                </div>
+            </section>
+            <!-- Parte categorías -->
+            <section>
+                <h2>Categorías:</h2>
+                <ol class="categorias">
+                    {{#each category}}
+                        <li>{{name}}</li>
+                    {{/each}}
+                </ol>
+            </section>
+        </div>
+        {{> footer}}
+    </body>
+</html>

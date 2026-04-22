@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        {{> header}}
+        <title>{{movie.title}}</title>
+    </head>
+    <body>
+        {{> menu}}
+        <section class="contenido detalles">
+            <div>
+                <img src="/imatges/caratula.png" alt="caratula">
+            </div>
+            <div>
+                <h1>{{movie.title}}</h1>
+                <p>{{movie.description}}</p>
+                <p><strong>Año:</strong> {{movie.release_year}}</p>
+                <p><strong>Idioma:</strong> {{movie.language}}</p>
+                <p><strong>Duración:</strong> {{movie.length}} min</p>
+                <p><strong>Rating:</strong> {{movie.rating}}</p>
+                <p><strong>Actores:</strong></p>
+                <ul>
+                    {{#each movie.actors}}
+                        <li>{{first_name}} {{last_name}}</li>
+                    {{/each}}
+                </ul>
+                <a href="/movieEdit?id={{movie.film_id}}" class="editar"><button>Editar</button></a>
+                <a href="/movies" class="volver"><button>Volver a Movies</button></a>
+            </div>
+        </section>
+        {{> footer}}
+    </body>
+</html>

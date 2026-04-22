@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        {{> header}}
+        <title>Customers</title>
+    </head>
+    <body>
+        {{> menu}}
+        <h1 class="titulopag">Customers</h1>
+        <section class="contenido pelis">
+            {{#each customers}}                
+                <div>
+                    <p><strong>{{first_name}} {{last_name}}</strong></p>
+                    <ol>
+                        {{#each rentals}}
+                            <li>{{title}}</li>
+                        {{/each}}
+                    </ol>
+                </div>
+            {{/each}}
+        </section>
+        {{> footer}}
+    </body>
+</html>

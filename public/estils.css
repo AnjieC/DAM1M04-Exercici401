@@ -1,0 +1,154 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Vend Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a{
+    text-decoration: none;
+}
+
+nav{
+    width: 100%;
+    padding: 15px 0;
+    background-color: black;
+}
+
+nav a{
+    color: white;
+    font-size: large;
+    margin-left: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+nav a:hover{
+    color: yellow;
+    letter-spacing: 1.5px;
+}
+
+footer{
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px 0;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.contenido{
+    flex: 1;
+}
+
+section{
+    margin: 2% 7%;
+}
+
+.titulopag{
+    text-align: center;
+    padding-top: 40px;
+}
+
+.caratula{
+    width: 100%;
+}
+
+.pelis{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+    justify-content: center;
+}
+
+.pelis div{
+    flex: 0 0 250px;
+}
+
+.categorias{
+    display: flex;
+    padding: 0;
+    justify-content: space-around;
+}
+
+.detalles{
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+}
+
+.detalles div{
+    width: 33%;
+}
+
+.detalles img{
+    width: 100%;
+}
+
+.verdetalles{
+    color: dodgerblue;
+    transition: color 0.3s ease;
+}
+
+.verdetalles:hover{
+    color: darkslateblue;
+}
+
+button {
+    border: none;
+    font-size: large;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover{
+    transform: scale(1.07);
+}
+
+.nuevapeli{
+    text-align: center;
+}
+
+.nuevapeli button{
+    color: rgb(90, 90, 0);
+    background-color: yellow;
+}
+
+.nuevapeli button:hover{
+    background-color: rgb(211, 211, 0);
+}
+
+.cancelar button{
+    margin-top: 10px;
+}
+
+.volver button{
+    margin-left: 10px;
+}
+
+.cancelar button:hover, .volver button:hover{
+    background-color: rgb(116, 116, 116);
+}
+
+.add, .editar button{
+    background-color: gold;
+}
+
+.add:hover, .editar button:hover{
+    background-color: goldenrod;
+}
+
+.borrar{
+    margin-top: 10px;
+    background-color: coral;
+}
+
+.borrar:hover{
+    background-color: chocolate;
+}
