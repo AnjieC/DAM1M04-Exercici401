@@ -6,37 +6,38 @@
     </head>
     <body>
         {{> menu}}
-        <div class="contenido">
-            <h1 class="titulopag">Películas y Categorías destacadas</h1>
-            <!-- Parte películas -->
-            <section>
-                <h2>Películas:</h2>
-                <div class="pelis">
-                    {{#each film}}
-                        <div>
-                            <h3>{{title}}</h3>
-                            <img class="caratula" src="/imatges/caratula.png" alt="caratula">
-                            <p><strong>Año:</strong> {{release_year}}</p>
-                            <p><strong>Actores:</strong></p>
-                            <ul>
-                                {{#each actors}}
-                                    <li>{{first_name}} {{last_name}}</li>
-                                {{/each}}
-                            </ul>
-                        </div>
-                    {{/each}}
+        <main>
+            <h1 class="titulopag">Panel de control</h1>
+            <!-- Pestañas -->
+            <section class="tabs">
+                <!-- input type="radio", name="tab" -->
+                <input type="radio" name="tab" id="tab1" checked>
+                <input type="radio" name="tab" id="tab2">
+                <!-- label botones -->
+                <div class="tab_botones">
+                    <label class="tab_boton tab_boton1" for="tab1">Formulario</label>
+                    <label class="tab_boton tab_boton2" for="tab2">Equipo</label>
+                </div>
+                <!-- Contenido de las pestañas -->
+                <div class="tab-content content-1">
+                    <h2>Bienvenido/da!</h2>
+                    <p>Como ya habrás visto en la primera página, hay un formulario para nada sospechoso que puedes rellenar.</p>
+                    <p>Rellenalo y te llevarás una gran sorpresa, una sorpresa que puede cambiarte la vida jeje.</p>
+                    <div class="nota">
+                        <p><strong>Nota:</strong> todo esto es broma obviamente xd</p>
+                    </div>
+                </div>
+                <div class="tab-content content-2">
+                    <h2>El equipo detrás de esto:</h2>
+                    <p>Somos un equipo de profesionales apasionados por la tecnologia y el diseño we...</p>
+                    <p>O eso me gustaría decir, pero ni equipo ni profesionales, en realidad solo estoy yo xd</p>
+                    <p>Que quien soy? Que más da.</p>
+                    <div class="nota">
+                        <p><strong>PD:</strong> no sabía que hacer y terminé haciendo esto JAJAJA</p>
+                    </div>
                 </div>
             </section>
-            <!-- Parte categorías -->
-            <section>
-                <h2>Categorías:</h2>
-                <ol class="categorias">
-                    {{#each category}}
-                        <li>{{name}}</li>
-                    {{/each}}
-                </ol>
-            </section>
-        </div>
+        </main>
         {{> footer}}
     </body>
 </html>

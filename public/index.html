@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="estils.css">
+        <!-- Icono -->
+        <link rel="icon" href="./imatges/logo.png">
+        <!-- Fuente: Vend Sans -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Vend+Sans:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+        <title>Tienda Pokémon</title>
+    </head>
+    <body>
+        <nav>
+            <a href="./index.html">Dashboard</a>
+            <a href="./productes.html">Productos</a>
+            <a href="./clients.html">Clientes</a>
+        </nav>
+        <main>
+            <h1 class="titulopag">Panel de control (Dashboard)</h1>
+            <!-- Pestañas -->
+            <section class="tabs">
+                <!-- input type="radio", name="tab" -->
+                <input type="radio" name="tab" id="tab1" checked>
+                <input type="radio" name="tab" id="tab2">
+                <!-- label botones -->
+                <div class="tab_botones">
+                    <label class="tab_boton tab_boton1" for="tab1">KPI</label>
+                    <label class="tab_boton tab_boton2" for="tab2">Listados</label>
+                </div>
+                <!-- Contenido de las pestañas -->
+                <div class="tab-content content-1">
+                    <div>
+                        <h2>Ventas de hoy</h2>
+                    </div>
+                    <div>
+                        <h2>Ventas del mes</h2>
+                    </div>
+                    <div>
+                        <h2>Pedidos de hoy</h2>
+                    </div>
+                    <div>
+                        <h2>Pedidos del mes</h2>
+                    </div>
+                    <div>
+                        <h2>Stock bajo</h2>
+                    </div>
+                </div>
+                <div class="tab-content content-2">
+                    <div>
+                        <h2>Últimas ventas</h2>
+                    </div>
+                    <div>
+                        <h2>Productos más vendidos</h2>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            &copy; 2026 - Todos los derechos reservados
+        </footer>
+    </body>
+</html>

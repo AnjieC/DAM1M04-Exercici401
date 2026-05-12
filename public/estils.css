@@ -17,7 +17,10 @@ a{
 nav{
     width: 100%;
     padding: 15px 0;
-    background-color: black;
+    background-color: rgb(52, 113, 228);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 nav a{
@@ -28,20 +31,21 @@ nav a{
 }
 
 nav a:hover{
-    color: yellow;
-    letter-spacing: 1.5px;
+    color: rgb(0, 0, 58);
+    letter-spacing: 1.1px;
 }
 
 footer{
     width: 100%;
     margin-top: 20px;
     padding: 15px 0;
-    background-color: black;
-    color: white;
+    background-color: grey;
+    color: black;
+    font-weight: bold;
     text-align: center;
 }
 
-.contenido{
+main{
     flex: 1;
 }
 
@@ -51,8 +55,71 @@ section{
 
 .titulopag{
     text-align: center;
-    padding-top: 40px;
+    padding-top: 20px;
 }
+
+/* Pestañas */
+.tabs input{
+    display: none;
+}
+
+.tabs{
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 7px 30px rgba(0,0,0,0.3);
+    overflow: hidden;
+    margin-bottom: 40px
+}
+
+.tab_botones{
+    display: flex;
+    background-color: rgb(238, 238, 238);
+    border-bottom: 1.5px solid rgb(194, 194, 194);
+}
+
+.tab_boton{
+    border-bottom: 3px solid transparent;
+    color: rgb(75, 75, 75);
+    cursor: pointer;
+    flex: 1;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s linear;
+    user-select: none;
+}
+
+.tab_boton:hover{
+    background-color: rgb(189, 207, 240);
+    color: cornflowerblue;
+}
+
+/* Selección de la pestaña actual */
+body:has(#tab1:checked) .tab_botones .tab_boton1,
+body:has(#tab2:checked) .tab_botones .tab_boton2{
+    background: white;
+    border-bottom-color: cornflowerblue;
+    color: cornflowerblue;
+}
+
+.tab-content{
+    display: none;
+    padding: 2.5rem;
+    animation: animacion_tab 0.4s ease-in;
+}
+
+@keyframes animacion_tab{
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+body:has(#tab1:checked) .content-1,
+body:has(#tab2:checked) .content-2{
+    display: block;
+}
+
+
+
+
 
 .caratula{
     width: 100%;
