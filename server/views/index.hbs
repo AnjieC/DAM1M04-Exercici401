@@ -1,43 +1,54 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        {{> header}}
-        <title>Home</title>
-    </head>
-    <body>
-        {{> menu}}
-        <main>
-            <h1 class="titulopag">Panel de control</h1>
-            <!-- Pestañas -->
-            <section class="tabs">
-                <!-- input type="radio", name="tab" -->
-                <input type="radio" name="tab" id="tab1" checked>
-                <input type="radio" name="tab" id="tab2">
-                <!-- label botones -->
-                <div class="tab_botones">
-                    <label class="tab_boton tab_boton1" for="tab1">Formulario</label>
-                    <label class="tab_boton tab_boton2" for="tab2">Equipo</label>
-                </div>
-                <!-- Contenido de las pestañas -->
-                <div class="tab-content content-1">
-                    <h2>Bienvenido/da!</h2>
-                    <p>Como ya habrás visto en la primera página, hay un formulario para nada sospechoso que puedes rellenar.</p>
-                    <p>Rellenalo y te llevarás una gran sorpresa, una sorpresa que puede cambiarte la vida jeje.</p>
-                    <div class="nota">
-                        <p><strong>Nota:</strong> todo esto es broma obviamente xd</p>
-                    </div>
-                </div>
-                <div class="tab-content content-2">
-                    <h2>El equipo detrás de esto:</h2>
-                    <p>Somos un equipo de profesionales apasionados por la tecnologia y el diseño we...</p>
-                    <p>O eso me gustaría decir, pero ni equipo ni profesionales, en realidad solo estoy yo xd</p>
-                    <p>Que quien soy? Que más da.</p>
-                    <div class="nota">
-                        <p><strong>PD:</strong> no sabía que hacer y terminé haciendo esto JAJAJA</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-        {{> footer}}
-    </body>
-</html>
+<main>
+    <h1 class="titulopag">Panel de control (Dashboard)</h1>
+    <!-- Pestañas -->
+    <section class="tabs">
+        <!-- input type="radio", name="tab" -->
+        <input type="radio" name="tab" id="tab1" checked>
+        <input type="radio" name="tab" id="tab2">
+        <!-- label botones -->
+        <div class="tab_botones">
+            <label class="tab_boton tab_boton1" for="tab1">KPI</label>
+            <label class="tab_boton tab_boton2" for="tab2">Listados</label>
+        </div>
+        <!-- Contenido de las pestañas -->
+        <div class="tab-content content-1">
+            <div class="boton_toggle">
+                <label class="toggle" for="vista_completa">
+                    <input class="hidden" type="checkbox" id="vista_completa">
+                    <span class="indicator"></span>
+                </label>
+                <span>Vista Completa</span>
+            </div>
+            <div>
+                <h2>Ventas de hoy</h2>
+            </div>
+            <div>
+                <h2>Ventas del mes</h2>
+            </div>
+            <div>
+                <h2>Pedidos de hoy</h2>
+            </div>
+            <div>
+                <h2>Pedidos del mes</h2>
+            </div>
+            <div>
+                <h2>Stock bajo</h2>
+            </div>
+        </div>
+        <div class="tab-content content-2">
+            <div class="boton_toggle">
+                <label class="toggle" for="color_stock">
+                    <input class="hidden" type="checkbox" id="color_stock">
+                    <span class="indicator"></span>
+                </label>
+                <span>Nivel Stock</span>
+            </div>
+            <div>
+                <h2>Últimas ventas</h2>
+            </div>
+            <div>
+                <h2>Productos más vendidos</h2>
+            </div>
+        </div>
+    </section>
+</main>
