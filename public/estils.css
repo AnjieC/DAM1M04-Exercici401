@@ -9,7 +9,6 @@ body{
     flex-direction: column;
     min-height: 100vh;
 }
-
 a{
     text-decoration: none;
 }
@@ -17,19 +16,17 @@ a{
 nav{
     width: 100%;
     padding: 15px 0;
-    background-color: rgb(52, 113, 228);
+    background: linear-gradient(to bottom, #3d7bff, #0053d6);
     position: sticky;
     top: 0;
     z-index: 100;
 }
-
 nav a{
     color: white;
     font-size: large;
     margin-left: 20px;
     transition: all 0.3s ease-in-out;
 }
-
 nav a:hover{
     color: rgb(0, 0, 58);
     letter-spacing: 1.1px;
@@ -48,7 +45,6 @@ footer{
 main{
     flex: 1;
 }
-
 section{
     margin: 2% 7%;
 }
@@ -62,7 +58,6 @@ section{
 .tabs input{
     display: none;
 }
-
 .tabs{
     background-color: white;
     border-radius: 12px;
@@ -70,13 +65,11 @@ section{
     overflow: hidden;
     margin-bottom: 40px
 }
-
 .tab_botones{
     display: flex;
     background-color: rgb(238, 238, 238);
     border-bottom: 1.5px solid rgb(194, 194, 194);
 }
-
 .tab_boton{
     border-bottom: 3px solid transparent;
     color: rgb(75, 75, 75);
@@ -87,12 +80,10 @@ section{
     transition: all 0.3s linear;
     user-select: none;
 }
-
 .tab_boton:hover{
     background-color: rgb(189, 207, 240);
     color: cornflowerblue;
 }
-
 /* Selección de la pestaña actual */
 body:has(#tab1:checked) .tab_botones .tab_boton1,
 body:has(#tab2:checked) .tab_botones .tab_boton2{
@@ -100,47 +91,77 @@ body:has(#tab2:checked) .tab_botones .tab_boton2{
     border-bottom-color: cornflowerblue;
     color: cornflowerblue;
 }
-
 .tab-content{
     display: none;
     padding: 2.5rem;
     animation: animacion_tab 0.4s ease-in;
 }
-
 @keyframes animacion_tab{
     from {opacity: 0; transform: translateY(10px);}
     to {opacity: 1; transform: translateY(0);}
 }
-
 body:has(#tab1:checked) .content-1,
 body:has(#tab2:checked) .content-2{
     display: block;
 }
 
-
-
-
-
-.caratula{
-    width: 100%;
+input[type="checkbox"] {
+    display: none;
+}
+.toggle{
+    --w: 60px;
+    --h: 30px;
+    --pad: 3px;
+    --knob: 24px;
+    display: inline-flex;
+}
+.boton_toggle {
+    font-weight: 600;
+    color: rgb(0, 0, 58);
+    align-items: center;
+    display: inline-flex;
+    gap: 10px;
+}
+/* Input ocult */
+.toggle > .hidden{
+    display: none;
+}
+/* Interruptor "toggle" */
+.toggle > .indicator{
+    background: linear-gradient(to bottom, #ddd, #aaa);
+    border: 1px solid #666;
+    border-radius: 999px;
+    cursor: pointer;
+    height: var(--h);
+    position: relative;
+    transition: background 0.25s ease-in-out, border 0.25s ease-in-out;
+    width: var(--w);
+}
+.toggle > .indicator:hover{
+    background: linear-gradient(to bottom, #ccc, #999);
+}
+/* Cercle indicador */
+.toggle > .indicator::after{
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    content: "";
+    height: var(--knob);
+    left: var(--pad);
+    position: absolute;
+    top: var(--pad);
+    transition: transform 0.25s ease-in-out, background 0.25s;
+    width: var(--knob);
+}
+/* Estat ON */
+.toggle:has(> .hidden:checked) > .indicator{
+  background: linear-gradient(to bottom, #3d7bff, #0053d6);
+  border-color: #0044bb;
+}
+.toggle:has(> .hidden:checked) > .indicator::after{
+  transform: translateX(calc(var(--w) - var(--knob) - var(--pad)*2));
 }
 
-.pelis{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2%;
-    justify-content: center;
-}
-
-.pelis div{
-    flex: 0 0 250px;
-}
-
-.categorias{
-    display: flex;
-    padding: 0;
-    justify-content: space-around;
-}
 
 .detalles{
     display: flex;
