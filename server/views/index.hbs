@@ -1,17 +1,21 @@
 <main>
     <h1 class="titulopag">Panel de control (Dashboard)</h1>
+
     <!-- Pestañas -->
     <section class="tabs">
-        <!-- input type="radio", name="tab" -->
+
         <input type="radio" name="tab" id="tab1" checked>
         <input type="radio" name="tab" id="tab2">
-        <!-- label botones -->
+
+        <!-- Botones -->
         <div class="tab_botones">
             <label class="tab_boton tab_boton1" for="tab1">KPI</label>
             <label class="tab_boton tab_boton2" for="tab2">Listados</label>
         </div>
-        <!-- Contenido de las pestañas -->
+
+        <!-- KPI -->
         <div class="tab-content content-1">
+
             <div class="boton_toggle">
                 <label class="toggle" for="vista_completa">
                     <input class="hidden" type="checkbox" id="vista_completa">
@@ -19,23 +23,43 @@
                 </label>
                 <span>Vista Completa</span>
             </div>
-            <div>
+
+            <div class="card_kpi">
                 <h2>Ventas de hoy</h2>
+                <p>{{ventasHoy}} ₽</p>
             </div>
-            <div>
+
+            <div class="card_kpi">
                 <h2>Ventas del mes</h2>
+                <p>{{ventasMes}} ₽</p>
             </div>
-            <div>
+
+            <div class="card_kpi">
                 <h2>Pedidos de hoy</h2>
+                <p>{{pedidosHoy}}</p>
             </div>
-            <div>
+
+            <div class="card_kpi">
                 <h2>Pedidos del mes</h2>
+                <p>{{pedidosMes}}</p>
             </div>
-            <div>
+
+            <div class="card_kpi">
                 <h2>Stock bajo</h2>
+
+                {{#each stockBajo}}
+                    <div class="stock_item">
+                        <strong>{{name}}</strong>
+                        <span>Stock: {{stock}}</span>
+                    </div>
+                {{/each}}
             </div>
+
         </div>
+
+        <!-- LISTADOS -->
         <div class="tab-content content-2">
+
             <div class="boton_toggle">
                 <label class="toggle" for="color_stock">
                     <input class="hidden" type="checkbox" id="color_stock">
@@ -43,12 +67,67 @@
                 </label>
                 <span>Nivel Stock</span>
             </div>
-            <div>
+
+            <div class="tabla_dashboard">
+
                 <h2>Últimas ventas</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Cliente</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {{#each ultimasVentas}}
+                        <tr>
+                            <td>{{formatDate sale_date}}</td>
+                            <td>{{customer}}</td>
+                            <td>{{total}} ₽</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+
             </div>
-            <div>
+
+            <div class="tabla_dashboard">
+
                 <h2>Productos más vendidos</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Vendidos</th>
+                            <th>Stock</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {{#each topProductos}}
+
+                        <tr class="
+                            {{#if (gt stock 20)}}stock_ok{{/if}}
+                            {{#if (eq stock 10)}}stock_bajo{{/if}}
+                        ">
+
+                            <td>{{name}}</td>
+                            <td>{{vendidos}}</td>
+                            <td>{{stock}}</td>
+
+                        </tr>
+
+                        {{/each}}
+                    </tbody>
+                </table>
+
             </div>
+
         </div>
+
     </section>
 </main>
